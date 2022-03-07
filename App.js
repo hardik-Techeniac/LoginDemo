@@ -4,13 +4,10 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './App/Screens/Home';
-
+import HomeScreen from './App/Screens/HomeScreen';
+import LoginScreen from './App/Screens/LoginScreen';
+import AuthComponent from './App/Screens/AuthComponent';
 // import LoginScreen from './Screen/LoginScreen';
-
-
-
-
 
 
 const Stack = createNativeStackNavigator();
@@ -19,9 +16,10 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home" headerMode="none">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="AuthComponent" headerMode="none">
+        <Stack.Screen name="AuthComponent" component={AuthComponent} />
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={HomeScreen} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
